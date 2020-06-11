@@ -15,9 +15,10 @@ var	commentRoutes 	  = require("./routes/comments"),
 	campgroundRoutes  = require("./routes/campgrounds"),
 	indexRoutes       = require("./routes/index");
 
-//mongoose.connect("mongodb://localhost:27017/yelp-camp", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-mongoose.connect("mongodb+srv://sarthak:saru202001@cluster0-hvpay.mongodb.net/<dbname>?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-//mongodb+srv://sarthak:saru202001@cluster0-hvpay.mongodb.net/<dbname>?retryWrites=true&w=majority
+var URL = process.env.DATABASEURL || 3000;
+mongoose.connect(URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+// mongoose.connect("mongodb+srv://sarthak:saru202001@cluster0-hvpay.mongodb.net/<dbname>?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+console.log(process.env.DATABASEURL);
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}))
