@@ -16,8 +16,8 @@ var	commentRoutes 	  = require("./routes/comments"),
 	indexRoutes       = require("./routes/index");
 
 var URL = process.env.DATABASEURL || 3000;
-console.log(process.env.DATABASEURL);
-mongoose.connect("mongodb://localhost/yelp-camp", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+//console.log(process.env.DATABASEURL);
+mongoose.connect(URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 // mongodb://localhost/yelp-camp
 // mongoose.connect("mongodb+srv://sarthak:saru202001@cluster0-hvpay.mongodb.net/<dbname>?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
